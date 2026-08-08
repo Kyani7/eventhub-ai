@@ -23,11 +23,13 @@ const PLAN_STEPS = ["Schedule", "Budget", "Volunteers", "Promotion"];
 
 const CHIPS = ["Smart recommendations", "Live notifications", "AI email writer"];
 
+const cardBase =
+  "rounded-[28px] border p-7 transition-all duration-300 hover:-translate-y-1";
+
 export default function Features() {
   return (
     <section id="features" className="relative py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        {/* Section header */}
         <motion.div
           variants={reveal}
           initial="hidden"
@@ -51,19 +53,17 @@ export default function Features() {
           </p>
         </motion.div>
 
-        {/* Bento grid */}
         <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-6">
-          {/* AI Event Planner — featured, large */}
           <motion.div
             variants={reveal}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             custom={1}
-            className="group relative overflow-hidden rounded-[28px] border border-mist bg-cloud/60 p-7 sm:col-span-6 sm:p-9 lg:col-span-4"
+            className={`${cardBase} group relative overflow-hidden border-mist bg-paper shadow-[0_1px_0_0_rgba(10,10,11,0.03)] hover:border-accent/30 hover:shadow-[0_24px_48px_-24px_rgba(37,99,235,0.25)] sm:col-span-6 sm:p-9 lg:col-span-4`}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-ink">
-              <Sparkles size={16} className="text-paper" strokeWidth={2.25} />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent-soft">
+              <Sparkles size={18} className="text-accent" strokeWidth={2.25} />
             </div>
             <h3 className="mt-5 font-display text-[21px] font-bold text-ink sm:text-[23px]">
               AI Event Planner
@@ -74,9 +74,8 @@ export default function Features() {
               read.
             </p>
 
-            {/* Mock chat → checklist */}
-            <div className="mt-7 rounded-2xl border border-mist bg-paper p-4 shadow-sm sm:p-5">
-              <p className="rounded-xl bg-cloud px-3.5 py-2.5 text-[13px] text-ink-soft">
+            <div className="mt-7 rounded-2xl border border-mist bg-cloud/50 p-4 sm:p-5">
+              <p className="rounded-xl bg-paper px-3.5 py-2.5 text-[13px] text-ink-soft shadow-sm">
                 "We need a one-day AI workshop for 200 students."
               </p>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -87,7 +86,7 @@ export default function Features() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
-                    className="flex items-center gap-1.5 rounded-lg bg-accent-soft px-2.5 py-2 text-[12px] font-medium text-accent"
+                    className="flex items-center gap-1.5 rounded-lg bg-accent px-2.5 py-2 text-[12px] font-medium text-paper"
                   >
                     <FileCheck2 size={13} strokeWidth={2.5} />
                     {step}
@@ -97,17 +96,17 @@ export default function Features() {
             </div>
           </motion.div>
 
-          {/* Live QR Attendance */}
           <motion.div
             variants={reveal}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             custom={2}
-            className="relative overflow-hidden rounded-[28px] border border-mist bg-ink p-7 text-paper sm:col-span-6 sm:p-9 lg:col-span-2"
+            className={`${cardBase} relative overflow-hidden border-ink bg-ink text-paper shadow-[0_20px_50px_-20px_rgba(10,10,11,0.5)] hover:shadow-[0_28px_60px_-20px_rgba(10,10,11,0.6)] sm:col-span-6 sm:p-9 lg:col-span-2`}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-paper/10">
-              <QrCode size={16} className="text-paper" strokeWidth={2.25} />
+            <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/20 blur-3xl" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-paper/10">
+              <QrCode size={18} className="text-paper" strokeWidth={2.25} />
             </div>
             <h3 className="mt-5 font-display text-[21px] font-bold sm:text-[23px]">
               Live QR attendance
@@ -116,7 +115,7 @@ export default function Features() {
               Every attendee gets a unique code. Organizers scan, attendance
               updates in real time.
             </p>
-            <div className="mt-7 flex items-end justify-between rounded-2xl bg-paper/[0.06] p-4">
+            <div className="mt-7 flex items-end justify-between rounded-2xl bg-paper/[0.07] p-4">
               <div>
                 <p className="text-[11px] uppercase tracking-wide text-paper/50">
                   Checked in
@@ -127,17 +126,16 @@ export default function Features() {
             </div>
           </motion.div>
 
-          {/* Poster & Copy Generator */}
           <motion.div
             variants={reveal}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             custom={3}
-            className="rounded-[28px] border border-mist bg-cloud/60 p-7 sm:col-span-3 lg:col-span-2"
+            className={`${cardBase} border-mist bg-paper shadow-[0_1px_0_0_rgba(10,10,11,0.03)] hover:border-ink/20 hover:shadow-[0_20px_40px_-24px_rgba(10,10,11,0.18)] sm:col-span-3 lg:col-span-2`}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-ink">
-              <ImageIcon size={16} className="text-paper" strokeWidth={2.25} />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cloud">
+              <ImageIcon size={18} className="text-ink" strokeWidth={2.25} />
             </div>
             <h3 className="mt-5 font-display text-[18px] font-bold text-ink">
               Poster &amp; caption generator
@@ -148,17 +146,16 @@ export default function Features() {
             </p>
           </motion.div>
 
-          {/* Feedback Analyzer */}
           <motion.div
             variants={reveal}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             custom={4}
-            className="rounded-[28px] border border-mist bg-cloud/60 p-7 sm:col-span-3 lg:col-span-2"
+            className={`${cardBase} border-mist bg-paper shadow-[0_1px_0_0_rgba(10,10,11,0.03)] hover:border-ink/20 hover:shadow-[0_20px_40px_-24px_rgba(10,10,11,0.18)] sm:col-span-3 lg:col-span-2`}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-ink">
-              <BarChart3 size={16} className="text-paper" strokeWidth={2.25} />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cloud">
+              <BarChart3 size={18} className="text-ink" strokeWidth={2.25} />
             </div>
             <h3 className="mt-5 font-display text-[18px] font-bold text-ink">
               Feedback analyzer
@@ -182,17 +179,16 @@ export default function Features() {
             </div>
           </motion.div>
 
-          {/* Certificates */}
           <motion.div
             variants={reveal}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
             custom={5}
-            className="rounded-[28px] border border-mist bg-cloud/60 p-7 sm:col-span-6 lg:col-span-2"
+            className={`${cardBase} border-mist bg-paper shadow-[0_1px_0_0_rgba(10,10,11,0.03)] hover:border-ink/20 hover:shadow-[0_20px_40px_-24px_rgba(10,10,11,0.18)] sm:col-span-6 lg:col-span-2`}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-ink">
-              <Wand2 size={16} className="text-paper" strokeWidth={2.25} />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cloud">
+              <Wand2 size={18} className="text-ink" strokeWidth={2.25} />
             </div>
             <h3 className="mt-5 font-display text-[18px] font-bold text-ink">
               Certificates, auto-signed
@@ -204,7 +200,6 @@ export default function Features() {
           </motion.div>
         </div>
 
-        {/* Trailing chips for the rest of the AI feature list */}
         <motion.div
           variants={reveal}
           initial="hidden"

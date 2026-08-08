@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
@@ -12,15 +12,31 @@ const LINKS = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 12);
+
+      if (open) {
+        lastY.current = y;
+        return;
+      }
+
+      if (y > lastY.current && y > 120) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastY.current = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [open]);
 
-  // Lock body scroll when the mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -29,17 +45,19 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+    <motion.header
+      animate={{ y: hidden ? "-130%" : "0%" }}
+      transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
+      className={`fixed inset-x-0 top-0 z-50 transition-[padding] duration-300 ${
         scrolled ? "py-3" : "py-5"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 sm:px-8">
         <div
-          className={`flex w-full items-center justify-between rounded-full border transition-all duration-300 ${
+          className={`flex w-full items-center justify-between rounded-full border backdrop-blur-xl transition-all duration-300 ${
             scrolled
-              ? "border-mist/80 bg-paper/80 shadow-[0_1px_0_0_rgba(0,0,0,0.03)] backdrop-blur-xl px-4 py-2"
-              : "border-transparent bg-transparent px-2 py-1"
+              ? "border-mist/60 bg-paper/75 shadow-[0_10px_40px_-14px_rgba(10,10,11,0.22)] px-4 py-2"
+              : "border-mist/50 bg-paper/60 shadow-[0_6px_24px_-12px_rgba(10,10,11,0.14)] px-3 py-1.5"
           }`}
         >
           <a href="#top" className="flex items-center gap-2 font-display">
@@ -64,12 +82,15 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-2 md:flex">
+
             <a
+            
               href="#login"
               className="rounded-full px-4 py-2 text-[13.5px] font-medium text-ink-soft transition-colors hover:text-ink"
             >
               Sign in
             </a>
+            
             <a
               href="#get-started"
               className="group inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2.5 text-[13.5px] font-semibold text-paper transition-transform duration-200 hover:-translate-y-0.5"
@@ -103,8 +124,11 @@ export default function Navbar() {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="mx-5 mt-2 overflow-hidden rounded-3xl border border-mist bg-paper/95 p-3 shadow-xl backdrop-blur-xl md:hidden"
           >
+
+          
             <nav className="flex flex-col">
               {LINKS.map((link) => (
+                
                 <a
                   key={link.href}
                   href={link.href}
@@ -116,6 +140,7 @@ export default function Navbar() {
               ))}
             </nav>
             <div className="mt-2 flex flex-col gap-2 border-t border-mist pt-3">
+              
               <a
                 href="#login"
                 onClick={() => setOpen(false)}
@@ -123,7 +148,9 @@ export default function Navbar() {
               >
                 Sign in
               </a>
+
               <a
+              
                 href="#get-started"
                 onClick={() => setOpen(false)}
                 className="rounded-2xl bg-ink px-4 py-3.5 text-center text-[15px] font-semibold text-paper"
@@ -134,6 +161,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   );
 }
