@@ -5,7 +5,7 @@ const steps = [
   {
     icon: MessageSquareText,
     title: "Describe the event",
-    text: "Organizer types one line — audience, size, date. The AI turns it into a full schedule, budget, and checklist.",
+    text: "Organizer types one line: audience, size, date. The AI turns it into a full schedule, budget, and checklist.",
     tag: "Organizer",
   },
   {

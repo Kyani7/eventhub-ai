@@ -113,7 +113,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-mist pt-8 sm:flex-row sm:items-center">
           <p className="text-[12.5px] text-ink-soft">
-            &copy; {new Date().getFullYear()} EventHub AI. Final year project
+            &copy; {new Date().getFullYear()} Kynova. Final year project
             by Kyani Dan Rai.
           </p>
           

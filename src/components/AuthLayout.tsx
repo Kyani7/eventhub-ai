@@ -21,21 +21,21 @@ export default function AuthLayout({
 
         <Link to="/" className="relative flex items-center gap-2 font-display">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-paper text-[13px] font-bold text-ink">
-            E
+            K
           </span>
           <span className="text-[15px] font-bold tracking-tight">
-            EventHub<span className="text-accent">AI</span>
+            Ky<span className="text-accent">nova</span>
           </span>
         </Link>
 
         <div className="relative max-w-md">
           <ShieldCheck size={28} className="text-accent" strokeWidth={1.75} />
           <p className="mt-6 font-display text-[26px] font-bold leading-snug">
-            "We ran a 400-person tech fest with three people on the team. The
+            "We ran a 400 person tech fest with three people on the team. The
             planner did what usually takes a week."
           </p>
           <p className="mt-4 text-[13.5px] text-paper/60">
-            Anisha Rai, Event Lead, IT Club
+            Nischal Rai, Event Lead, IT Club
           </p>
         </div>
 
