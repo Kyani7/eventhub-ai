@@ -39,7 +39,7 @@ export default function HowItWorks() {
           <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
             From idea to certificate,
             <br />
-            four steps.
+            four steps
           </h2>
         </div>
 

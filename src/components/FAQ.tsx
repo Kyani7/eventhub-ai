@@ -18,12 +18,12 @@ const faqs: { category: (typeof categories)[number]; q: string; a: string }[] = 
   {
     category: "General",
     q: "Can one account hold multiple roles?",
-    a: "Yes — a student who also volunteers can switch between their student view and volunteer view from the same account.",
+    a: "Yes, A student who also volunteers can switch between their student view and volunteer view from the same account.",
   },
   {
     category: "AI & Automation",
     q: "Does the AI planner replace the organizer?",
-    a: "No — it drafts the schedule, budget, and checklist so the organizer isn't starting from a blank page. Everything it generates is editable before publishing.",
+    a: "No, It drafts the schedule, budget, and checklist so the organizer isn't starting from a blank page. Everything it generates is editable before publishing.",
   },
   {
     category: "AI & Automation",
@@ -78,7 +78,7 @@ export default function FAQ() {
               FAQ
             </p>
             <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
-              Questions, answered.
+              Questions, answered
             </h2>
             <p className="mt-3 max-w-md text-[14.5px] text-ink-soft">
               Sorted by what you're actually trying to figure out.

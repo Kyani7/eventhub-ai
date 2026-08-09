@@ -42,7 +42,7 @@ export default function Hero() {
             custom={0}
             className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink-soft sm:text-[12px]"
           >
-            AI-powered event management
+            Smart event management Platform
           </motion.p>
 
           <motion.h1
@@ -54,7 +54,7 @@ export default function Hero() {
           >
             Run campus events
             <br />
-            <span className="text-ink-soft">like a real product.</span>
+            <span className="text-ink-soft">like a real product</span>
           </motion.h1>
 
           <motion.p
@@ -62,11 +62,10 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             custom={2}
-            className="mt-6 max-w-lg text-[17px] leading-[1.6] text-ink-soft sm:text-[18px]"
+            className="mt-6 max-w-lg text-[17px] leading-[1.6] text-ink-soft text-justify sm:text-[18px]"
           >
-            EventHub AI plans, promotes, and checks people into your events —
-            from a one-day workshop to a 2,000-student fest. QR attendance,
-            certificates, and an AI co-planner, in one dashboard.
+          Kynova helps you plan, manage, and run events
+          from a one day workshop to a 2,000-student fest. QR attendance, certificates, analytics, and an AI co-planner, all in one platform.
           </motion.p>
 
           <motion.div

@@ -44,7 +44,7 @@ export default function Features() {
           <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
             Built for how events
             <br />
-            actually run.
+            actually run
           </h2>
           <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft sm:text-[16.5px]">
             Not another form builder. EventHub AI plans the logistics,
@@ -70,7 +70,7 @@ export default function Features() {
             </h3>
             <p className="mt-2 max-w-sm text-[14.5px] leading-relaxed text-ink-soft">
               Describe the event in one line. Get a schedule, budget,
-              equipment list, and a risk assessment — ready to edit, not just
+              equipment list, and a risk assessment ready to edit, not just
               read.
             </p>
 
@@ -138,7 +138,7 @@ export default function Features() {
               <ImageIcon size={18} className="text-ink" strokeWidth={2.25} />
             </div>
             <h3 className="mt-5 font-display text-[18px] font-bold text-ink">
-              Poster &amp; caption generator
+              Poster & caption generator
             </h3>
             <p className="mt-2 text-[13.5px] leading-relaxed text-ink-soft">
               Headline, Instagram caption, and invite email — from your event

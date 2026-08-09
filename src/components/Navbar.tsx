@@ -63,10 +63,10 @@ export default function Navbar() {
         >
           <a href="#top" className="flex items-center gap-2 font-display">
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-[13px] font-bold text-paper">
-              E
+              K
             </span>
             <span className="text-[15px] font-bold tracking-tight text-ink">
-              EventHub<span className="text-accent">AI</span>
+              Ky<span className="text-accent">nova</span>
             </span>
           </a>
 

@@ -40,7 +40,7 @@ export default function TicketCard() {
               Admit one
             </p>
             <h3 className="mt-1 font-display text-[19px] font-bold leading-tight text-ink sm:text-[21px]">
-              AI &amp; Robotics
+              AI & Robotics
               <br />
               Summit 2026
             </h3>
@@ -54,7 +54,7 @@ export default function TicketCard() {
           <div className="h-8 w-8 shrink-0 rounded-full bg-cloud ring-2 ring-paper" />
           <div>
             <p className="text-[13px] font-semibold text-ink">Rai, Kyani D.</p>
-            <p className="text-[12px] text-ink-soft">Student &middot; Seat GA-014</p>
+            <p className="text-[12px] text-ink-soft">Student . Seat GA-014</p>
           </div>
         </div>
 

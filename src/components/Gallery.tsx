@@ -17,13 +17,9 @@ export default function Gallery() {
               Moments
             </p>
             <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
-              Real events, run on it.
+              Real events, run on it
             </h2>
           </div>
-          <p className="max-w-xs text-[13.5px] text-ink-soft">
-            Placeholder photography — swap these for shots from your own
-            campus events.
-          </p>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:grid-rows-2">

@@ -29,7 +29,7 @@ export default function ProductPreview() {
             Inside the dashboard
           </p>
           <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
-            One place, every event.
+            One place, every event
           </h2>
         </div>
 
@@ -48,7 +48,7 @@ export default function ProductPreview() {
               <span className="h-2.5 w-2.5 rounded-full bg-mist" />
               <span className="h-2.5 w-2.5 rounded-full bg-mist" />
               <span className="ml-3 hidden rounded-md bg-paper px-3 py-1 text-[11px] text-ink-soft sm:block">
-                eventhub.ai/dashboard
+                Kynova/dashboard
               </span>
             </div>
 
