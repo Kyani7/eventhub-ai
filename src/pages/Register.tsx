@@ -66,7 +66,7 @@ export default function Register() {
     >
       {submitted ? (
         <div className="rounded-2xl border border-mist bg-cloud/50 p-5 text-[14px] text-ink-soft">
-          This is a UI-only demo — there's no backend wired up yet, so no
+          This is a UI-only demo. There's no backend wired up yet, so no
           account was actually created. Validation, role selection, and
           submit state all work as shown.
         </div>
@@ -152,7 +152,7 @@ export default function Register() {
           </button>
 
           <p className="text-center text-[12px] text-ink-soft">
-            By continuing you agree to EventHub AI's Terms and Privacy Policy.
+            By continuing you agree to Kynova's Terms and Privacy Policy.
           </p>
         </form>
       )}

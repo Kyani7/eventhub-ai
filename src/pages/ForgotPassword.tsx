@@ -46,7 +46,7 @@ export default function ForgotPassword() {
             If an account exists for {sentTo}, a reset link is on its way.
           </p>
           <p className="mt-2 text-[13px] text-ink-soft">
-            No backend is wired up yet, so no email actually sends — this is
+            No backend is wired up yet, so no email actually sends, This is
             the UI and validation flow only.
           </p>
         </div>

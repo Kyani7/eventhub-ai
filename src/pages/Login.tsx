@@ -42,7 +42,7 @@ export default function Login() {
     >
       {submitted ? (
         <div className="rounded-2xl border border-mist bg-cloud/50 p-5 text-[14px] text-ink-soft">
-          This is a UI-only demo — there's no backend wired up yet, so
+          This is a UI-only demo. There's no backend wired up yet, so
           nothing was actually authenticated. Form validation and submit
           state work as shown.
         </div>
