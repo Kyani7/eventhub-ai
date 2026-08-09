@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import TicketCard from "./TicketCard";
@@ -25,7 +26,6 @@ export default function Hero() {
       id="top"
       className="relative overflow-hidden pb-20 pt-32 sm:pb-28 sm:pt-40 lg:pt-44"
     >
-      {/* Ghost word — decorative, hidden from small screens where it would crowd text */}
       <span
         aria-hidden
         className="pointer-events-none absolute right-[-2%] top-[10%] hidden select-none font-display text-[220px] font-extrabold leading-none tracking-tight text-cloud sm:block lg:text-[280px]"
@@ -34,7 +34,6 @@ export default function Hero() {
       </span>
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-        {/* Copy column */}
         <div className="max-w-2xl">
           <motion.p
             variants={fadeUp}
@@ -77,8 +76,8 @@ export default function Hero() {
             custom={3}
             className="mt-9 flex flex-col gap-3 xs:flex-row xs:items-center"
           >
-            <a
-              href="#get-started"
+            <Link
+              to="/register"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-[14.5px] font-semibold text-paper transition-transform duration-200 hover:-translate-y-0.5"
             >
               Start for free
@@ -87,7 +86,8 @@ export default function Hero() {
                 strokeWidth={2.5}
                 className="transition-transform duration-200 group-hover:translate-x-1"
               />
-            </a>
+            </Link>
+            
             <a
               href="#how-it-works"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-mist bg-paper px-6 py-3.5 text-[14.5px] font-semibold text-ink transition-colors duration-200 hover:border-ink/20 hover:bg-cloud"
@@ -118,7 +118,6 @@ export default function Hero() {
           </motion.dl>
         </div>
 
-        {/* Visual column */}
         <div className="lg:pl-4">
           <TicketCard />
         </div>

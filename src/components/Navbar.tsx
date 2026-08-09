@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
@@ -71,6 +72,7 @@ export default function Navbar() {
 
           <nav className="hidden items-center gap-1 md:flex">
             {LINKS.map((link) => (
+              
               <a
                 key={link.href}
                 href={link.href}
@@ -82,17 +84,14 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-2 md:flex">
-
-            <a
-            
-              href="#login"
+            <Link
+              to="/login"
               className="rounded-full px-4 py-2 text-[13.5px] font-medium text-ink-soft transition-colors hover:text-ink"
             >
               Sign in
-            </a>
-            
-            <a
-              href="#get-started"
+            </Link>
+            <Link
+              to="/register"
               className="group inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-2.5 text-[13.5px] font-semibold text-paper transition-transform duration-200 hover:-translate-y-0.5"
             >
               Get started
@@ -101,7 +100,7 @@ export default function Navbar() {
                 strokeWidth={2.5}
                 className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
-            </a>
+            </Link>
           </div>
 
           <button
@@ -125,7 +124,6 @@ export default function Navbar() {
             className="mx-5 mt-2 overflow-hidden rounded-3xl border border-mist bg-paper/95 p-3 shadow-xl backdrop-blur-xl md:hidden"
           >
 
-          
             <nav className="flex flex-col">
               {LINKS.map((link) => (
                 
@@ -140,23 +138,20 @@ export default function Navbar() {
               ))}
             </nav>
             <div className="mt-2 flex flex-col gap-2 border-t border-mist pt-3">
-              
-              <a
-                href="#login"
+              <Link
+                to="/login"
                 onClick={() => setOpen(false)}
                 className="rounded-2xl px-4 py-3 text-center text-[15px] font-medium text-ink-soft active:bg-cloud"
               >
                 Sign in
-              </a>
-
-              <a
-              
-                href="#get-started"
+              </Link>
+              <Link
+                to="/register"
                 onClick={() => setOpen(false)}
                 className="rounded-2xl bg-ink px-4 py-3.5 text-center text-[15px] font-semibold text-paper"
               >
                 Get started
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

@@ -59,6 +59,7 @@ export default function Footer() {
             </p>
             <div className="mt-5 flex items-center gap-3">
               
+
               <a
                 href="https://github.com/Kyani7"
                 target="_blank"
@@ -69,16 +70,17 @@ export default function Footer() {
                 <GithubIcon />
               </a>
               
-             <a
-                href="#"
+              <a
+                href="https://www.linkedin.com/in/kyandu-rai-67729b363/"
                 aria-label="LinkedIn"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-mist text-ink-soft transition-colors hover:bg-ink hover:text-paper"
               >
                 <LinkedinIcon />
               </a>
               
+
               <a
-                href="#"
+                href="https://www.instagram.com/maikki_19/"
                 aria-label="Instagram"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-mist text-ink-soft transition-colors hover:bg-ink hover:text-paper"
               >
@@ -116,7 +118,7 @@ export default function Footer() {
           </p>
           
           <a
-            href="#get-started"
+            href="#top"
             className="group inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink"
           >
             Back to top
