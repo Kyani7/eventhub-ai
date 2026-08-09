@@ -62,7 +62,7 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             custom={2}
-            className="mt-6 max-w-lg text-[16px] leading-relaxed text-ink-soft sm:text-[17px]"
+            className="mt-6 max-w-lg text-[17px] leading-[1.6] text-ink-soft sm:text-[18px]"
           >
             EventHub AI plans, promotes, and checks people into your events —
             from a one-day workshop to a 2,000-student fest. QR attendance,
