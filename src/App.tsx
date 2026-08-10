@@ -5,6 +5,8 @@ import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Overview from "./pages/dashboard/Overview";
+import Events from "./pages/dashboard/Events";
+import CreateEvent from "./pages/dashboard/CreateEvent";
 import ComingSoon from "./pages/dashboard/ComingSoon";
 
 export default function App() {
@@ -18,7 +20,8 @@ export default function App() {
 
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Overview />} />
-          <Route path="events" element={<ComingSoon title="Events" />} />
+          <Route path="events" element={<Events />} />
+          <Route path="events/new" element={<CreateEvent />} />
           <Route path="registrations" element={<ComingSoon title="Registrations" />} />
           <Route path="certificates" element={<ComingSoon title="Certificates" />} />
           <Route path="announcements" element={<ComingSoon title="Announcements" />} />
