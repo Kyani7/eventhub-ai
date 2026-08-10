@@ -9,6 +9,7 @@ import Events from "./pages/dashboard/Events";
 import CreateEvent from "./pages/dashboard/CreateEvent";
 import ComingSoon from "./pages/dashboard/ComingSoon";
 import Registrations from "./pages/dashboard/Registrations";
+import Scanner from "./pages/dashboard/Scanner";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="events" element={<Events />} />
           <Route path="events/new" element={<CreateEvent />} />
           <Route path="registrations" element={<Registrations />} />
+          <Route path="scanner" element={<Scanner />} />
           <Route path="certificates" element={<ComingSoon title="Certificates" />} />
           <Route path="announcements" element={<ComingSoon title="Announcements" />} />
           <Route path="reports" element={<ComingSoon title="Reports" />} />
