@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -15,7 +14,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export default function Login() {
-  const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -24,7 +23,7 @@ export default function Login() {
 
   async function onSubmit(_values: FormValues) {
     await new Promise((r) => setTimeout(r, 900));
-    setSubmitted(true);
+    navigate("/dashboard");
   }
 
   return (
@@ -40,14 +39,7 @@ export default function Login() {
         </p>
       }
     >
-      {submitted ? (
-        <div className="rounded-2xl border border-mist bg-cloud/50 p-5 text-[14px] text-ink-soft">
-          This is a UI-only demo. There's no backend wired up yet, so
-          nothing was actually authenticated. Form validation and submit
-          state work as shown.
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             label="Email"
             type="email"
@@ -90,7 +82,6 @@ export default function Login() {
             )}
           </button>
         </form>
-      )}
     </AuthLayout>
   );
 }

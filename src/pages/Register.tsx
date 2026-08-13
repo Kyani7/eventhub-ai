@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -32,7 +31,7 @@ const schema = z
 type FormValues = z.infer<typeof schema>;
 
 export default function Register() {
-  const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -48,7 +47,7 @@ export default function Register() {
 
   async function onSubmit(_values: FormValues) {
     await new Promise((r) => setTimeout(r, 900));
-    setSubmitted(true);
+    navigate("/dashboard");
   }
 
   return (
@@ -64,14 +63,7 @@ export default function Register() {
         </p>
       }
     >
-      {submitted ? (
-        <div className="rounded-2xl border border-mist bg-cloud/50 p-5 text-[14px] text-ink-soft">
-          This is a UI-only demo. There's no backend wired up yet, so no
-          account was actually created. Validation, role selection, and
-          submit state all work as shown.
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             label="Full name"
             placeholder="Kyani Dan Rai"
@@ -152,10 +144,9 @@ export default function Register() {
           </button>
 
           <p className="text-center text-[12px] text-ink-soft">
-            By continuing you agree to Kynova's Terms and Privacy Policy.
+            By continuing you agree to EventHub AI's Terms and Privacy Policy.
           </p>
         </form>
-      )}
     </AuthLayout>
   );
 }
