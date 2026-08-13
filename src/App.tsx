@@ -7,9 +7,10 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import Overview from "./pages/dashboard/Overview";
 import Events from "./pages/dashboard/Events";
 import CreateEvent from "./pages/dashboard/CreateEvent";
-import ComingSoon from "./pages/dashboard/ComingSoon";
 import Registrations from "./pages/dashboard/Registrations";
 import Scanner from "./pages/dashboard/Scanner";
+import Certificates from "./pages/dashboard/Certificates";
+import ComingSoon from "./pages/dashboard/ComingSoon";
 
 export default function App() {
   return (
@@ -26,7 +27,7 @@ export default function App() {
           <Route path="events/new" element={<CreateEvent />} />
           <Route path="registrations" element={<Registrations />} />
           <Route path="scanner" element={<Scanner />} />
-          <Route path="certificates" element={<ComingSoon title="Certificates" />} />
+          <Route path="certificates" element={<Certificates />} />
           <Route path="announcements" element={<ComingSoon title="Announcements" />} />
           <Route path="reports" element={<ComingSoon title="Reports" />} />
           <Route path="settings" element={<ComingSoon title="Settings" />} />
