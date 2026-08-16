@@ -10,6 +10,7 @@ import CreateEvent from "./pages/dashboard/CreateEvent";
 import Registrations from "./pages/dashboard/Registrations";
 import Scanner from "./pages/dashboard/Scanner";
 import Certificates from "./pages/dashboard/Certificates";
+import Announcements from "./pages/dashboard/Announcements";
 import ComingSoon from "./pages/dashboard/ComingSoon";
 
 export default function App() {
@@ -28,7 +29,7 @@ export default function App() {
           <Route path="registrations" element={<Registrations />} />
           <Route path="scanner" element={<Scanner />} />
           <Route path="certificates" element={<Certificates />} />
-          <Route path="announcements" element={<ComingSoon title="Announcements" />} />
+          <Route path="announcements" element={<Announcements />} />
           <Route path="reports" element={<ComingSoon title="Reports" />} />
           <Route path="settings" element={<ComingSoon title="Settings" />} />
         </Route>
