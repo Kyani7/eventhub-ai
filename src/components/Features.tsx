@@ -47,7 +47,7 @@ export default function Features() {
             actually run
           </h2>
           <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft sm:text-[16.5px]">
-            Not another form builder. Kynova plans the logistics,
+            Not another form builder. Gatherly plans the logistics,
             verifies who's actually in the room, and does the paperwork
             after.
           </p>

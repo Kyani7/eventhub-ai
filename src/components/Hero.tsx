@@ -64,7 +64,7 @@ export default function Hero() {
             custom={2}
             className="mt-6 max-w-lg text-[17px] leading-[1.6] text-ink-soft text-justify sm:text-[18px]"
           >
-          Kynova helps you plan, manage, and run events
+          Gatherly helps you plan, manage, and run events
           from a one day workshop to a 2,000-student fest. QR attendance, certificates, analytics, and an AI co-planner, all in one platform.
           </motion.p>
 

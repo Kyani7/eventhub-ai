@@ -21,10 +21,10 @@ export default function AuthLayout({
 
         <Link to="/" className="relative flex items-center gap-2 font-display">
           <span className="flex h-8 w-8 items-center justify-center rounded-full bg-paper text-[13px] font-bold text-ink">
-            K
+            G
           </span>
           <span className="text-[15px] font-bold tracking-tight">
-            Ky<span className="text-accent">nova</span>
+            Gather<span className="text-accent">ly</span>
           </span>
         </Link>
 

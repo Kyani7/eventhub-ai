@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 function GithubIcon() {
   return (
@@ -47,10 +47,10 @@ export default function Footer() {
           <div>
             <a href="#top" className="flex items-center gap-2 font-display">
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-[13px] font-bold text-paper">
-                K
+                G
               </span>
               <span className="text-[15px] font-bold tracking-tight text-ink">
-                Ky<span className="text-accent">nova</span>
+                Gather<span className="text-accent">ly</span>
               </span>
             </a>
             <p className="mt-4 max-w-xs text-[13.5px] leading-relaxed text-ink-soft">
@@ -113,19 +113,19 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-mist pt-8 sm:flex-row sm:items-center">
           <p className="text-[12.5px] text-ink-soft">
-            &copy; {new Date().getFullYear()} Kynova. Final year project
+            &copy; {new Date().getFullYear()} Gatherly. Final year project
             by Kyani Dan Rai.
           </p>
           
           <a
             href="#top"
-            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold text-ink"
+            aria-label="Back to top"
+            className="group inline-flex h-[76px] w-[46px] items-center justify-center rounded-full border border-ink/30 bg-transparent text-ink transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:bg-cloud/50 shadow-sm"
           >
-            Back to top
-            <ArrowUpRight
-              size={14}
-              strokeWidth={2.5}
-              className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            <ArrowUp
+              size={20}
+              strokeWidth={1.75}
+              className="transition-transform duration-300 group-hover:-translate-y-1"
             />
           </a>
         </div>

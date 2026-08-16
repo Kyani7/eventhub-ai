@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const photos = [
-  { seed: "eventhub-main", label: "Tech Summit, 400 attendees", big: true },
-  { seed: "eventhub-2", label: "Volunteer check-in desk" },
-  { seed: "eventhub-3", label: "Workshop, hands-on session" },
-  { seed: "eventhub-4", label: "Certificate handover" },
+  { seed: "gatherly-main", label: "Tech Summit, 400 attendees", big: true },
+  { seed: "gatherly-2", label: "Volunteer check-in desk" },
+  { seed: "gatherly-3", label: "Workshop, hands-on session" },
+  { seed: "gatherly-4", label: "Certificate handover" },
 ];
 
 export default function Gallery() {

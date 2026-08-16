@@ -48,7 +48,7 @@ export default function ProductPreview() {
               <span className="h-2.5 w-2.5 rounded-full bg-mist" />
               <span className="h-2.5 w-2.5 rounded-full bg-mist" />
               <span className="ml-3 hidden rounded-md bg-paper px-3 py-1 text-[11px] text-ink-soft sm:block">
-                Kynova/dashboard
+                Gatherly/dashboard
               </span>
             </div>
 

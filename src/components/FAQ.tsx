@@ -7,7 +7,7 @@ const categories = ["General", "AI & Automation", "Attendance & Certificates"] a
 const faqs: { category: (typeof categories)[number]; q: string; a: string }[] = [
   {
     category: "General",
-    q: "Who can create events on Kynova?",
+    q: "Who can create events on Gatherly?",
     a: "Organizers and admins can create and publish events. Students browse and register, volunteers get assigned to check-in duty, and sponsors get a dashboard for their campaigns.",
   },
   {

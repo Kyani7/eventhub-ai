@@ -11,7 +11,8 @@ import Registrations from "./pages/dashboard/Registrations";
 import Scanner from "./pages/dashboard/Scanner";
 import Certificates from "./pages/dashboard/Certificates";
 import Announcements from "./pages/dashboard/Announcements";
-import ComingSoon from "./pages/dashboard/ComingSoon";
+import Reports from "./pages/dashboard/Reports";
+import Settings from "./pages/dashboard/Settings";
 
 export default function App() {
   return (
@@ -30,8 +31,8 @@ export default function App() {
           <Route path="scanner" element={<Scanner />} />
           <Route path="certificates" element={<Certificates />} />
           <Route path="announcements" element={<Announcements />} />
-          <Route path="reports" element={<ComingSoon title="Reports" />} />
-          <Route path="settings" element={<ComingSoon title="Settings" />} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
       </Routes>
     </BrowserRouter>

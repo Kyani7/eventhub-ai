@@ -53,7 +53,7 @@ export default function Register() {
   return (
     <AuthLayout
       title="Create your account"
-      subtitle="Set up EventHub AI for your club, department, or organization."
+      subtitle="Set up Gatherly for your club, department, or organization."
       footer={
         <p>
           Already have an account?{" "}
@@ -144,7 +144,7 @@ export default function Register() {
           </button>
 
           <p className="text-center text-[12px] text-ink-soft">
-            By continuing you agree to EventHub AI's Terms and Privacy Policy.
+            By continuing you agree to Gatherly's Terms and Privacy Policy.
           </p>
         </form>
     </AuthLayout>

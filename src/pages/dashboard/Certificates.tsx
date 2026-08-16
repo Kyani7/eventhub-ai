@@ -124,7 +124,7 @@ export default function Certificates() {
               <div>
                 <p className="text-[11px] text-ink-soft">Organizer signature</p>
                 <p className="mt-1 font-display text-[13px] italic text-ink">
-                  EventHub AI
+                  Gatherly
                 </p>
               </div>
               <div className="h-10 w-10 rounded-lg bg-cloud" />

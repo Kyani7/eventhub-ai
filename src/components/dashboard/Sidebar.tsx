@@ -25,10 +25,10 @@ export default function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
     <div className="flex h-full flex-col">
       <a href="/" className="flex items-center gap-2 px-2 font-display">
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-[13px] font-bold text-paper">
-          E
+          G
         </span>
         <span className="text-[15px] font-bold tracking-tight text-ink">
-          EventHub<span className="text-accent">AI</span>
+          Gather<span className="text-accent">ly</span>
         </span>
       </a>
 
