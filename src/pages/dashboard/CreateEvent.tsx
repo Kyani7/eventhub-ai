@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { ArrowLeft, Sparkles, Loader2, ImagePlus } from "lucide-react";
+import { ArrowLeft, FileText, Loader2, ImagePlus } from "lucide-react";
 import FormField from "../../components/FormField";
 
 const categories = ["Conference", "Workshop", "Hackathon", "Talk", "Fair", "Fest"] as const;
@@ -73,7 +73,7 @@ export default function CreateEvent() {
 
       <div className="mt-6 rounded-2xl border border-mist bg-cloud/50 p-5">
         <div className="flex items-center gap-2">
-          <Sparkles size={15} className="text-accent" strokeWidth={2.25} />
+          <FileText size={15} className="text-accent" strokeWidth={2.25} />
           <p className="text-[13px] font-semibold text-ink">AI draft</p>
         </div>
         <p className="mt-1 text-[12.5px] text-ink-soft">

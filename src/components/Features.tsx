@@ -1,11 +1,11 @@
 import { motion, type Variants } from "framer-motion";
 import {
-  Sparkles,
+  Compass,
   QrCode,
   Image as ImageIcon,
   FileCheck2,
   BarChart3,
-  Wand2,
+  Award,
 } from "lucide-react";
 
 const EASE_OUT = [0.16, 1, 0.3, 1] as const;
@@ -63,7 +63,7 @@ export default function Features() {
             className={`${cardBase} group relative overflow-hidden border-mist bg-paper shadow-[0_1px_0_0_rgba(10,10,11,0.03)] hover:border-accent/30 hover:shadow-[0_24px_48px_-24px_rgba(37,99,235,0.25)] sm:col-span-6 sm:p-9 lg:col-span-4`}
           >
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent-soft">
-              <Sparkles size={18} className="text-accent" strokeWidth={2.25} />
+              <Compass size={18} className="text-accent" strokeWidth={2.25} />
             </div>
             <h3 className="mt-5 font-display text-[21px] font-bold text-ink sm:text-[23px]">
               AI Event Planner
@@ -188,7 +188,7 @@ export default function Features() {
             className={`${cardBase} border-mist bg-paper shadow-[0_1px_0_0_rgba(10,10,11,0.03)] hover:border-ink/20 hover:shadow-[0_20px_40px_-24px_rgba(10,10,11,0.18)] sm:col-span-6 lg:col-span-2`}
           >
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cloud">
-              <Wand2 size={18} className="text-ink" strokeWidth={2.25} />
+              <Award size={18} className="text-ink" strokeWidth={2.25} />
             </div>
             <h3 className="mt-5 font-display text-[18px] font-bold text-ink">
               Certificates, auto-signed

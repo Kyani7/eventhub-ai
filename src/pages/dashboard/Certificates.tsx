@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Award, Download, Sparkles, CheckCircle2, Loader2 } from "lucide-react";
+import { Award, Download, CheckCircle2, Loader2 } from "lucide-react";
 
 type Recipient = {
   id: string;
@@ -68,7 +68,7 @@ export default function Certificates() {
               {generating ? (
                 <Loader2 size={13} className="animate-spin" />
               ) : (
-                <Sparkles size={13} strokeWidth={2.5} />
+                <Award size={13} strokeWidth={2.5} />
               )}
               {pendingCount === 0 ? "All generated" : `Generate ${pendingCount} pending`}
             </button>
