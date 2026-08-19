@@ -1,24 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-
-// A tiny deterministic "QR-like" grid — purely decorative, no external asset needed.
-function QrGrid() {
-  const cells = [
-    1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1,
-    0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1,
-    1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1,
-  ];
-  return (
-    <div className="grid h-16 w-16 grid-cols-8 gap-[2px] rounded-md bg-ink p-1.5 sm:h-[72px] sm:w-[72px]">
-      {cells.map((v, i) => (
-        <span
-          key={i}
-          className={v ? "rounded-[1px] bg-paper" : "rounded-[1px] bg-transparent"}
-        />
-      ))}
-    </div>
-  );
-}
+import QrImage from "./QrImage";
 
 export default function TicketCard() {
   return (
@@ -40,7 +22,7 @@ export default function TicketCard() {
               Admit one
             </p>
             <h3 className="mt-1 font-display text-[19px] font-bold leading-tight text-ink sm:text-[21px]">
-              AI & Robotics
+              AI &amp; Robotics
               <br />
               Summit 2026
             </h3>
@@ -54,7 +36,7 @@ export default function TicketCard() {
           <div className="h-8 w-8 shrink-0 rounded-full bg-cloud ring-2 ring-paper" />
           <div>
             <p className="text-[13px] font-semibold text-ink">Rai, Kyani D.</p>
-            <p className="text-[12px] text-ink-soft">Student . Seat GA-014</p>
+            <p className="text-[12px] text-ink-soft">Student &middot; Seat GA-014</p>
           </div>
         </div>
 
@@ -65,7 +47,9 @@ export default function TicketCard() {
             </p>
             <p className="font-display text-[15px] font-bold text-ink">09:41 AM</p>
           </div>
-          <QrGrid />
+          <div className="rounded-md bg-paper p-1.5">
+            <QrImage value="EVENTHUB|ai-robotics-summit|GA-014" size={56} />
+          </div>
 
           {/* Ticket notch */}
           <span className="absolute -left-[26px] top-1/2 h-5 w-5 -translate-y-1/2 rounded-full bg-paper" />

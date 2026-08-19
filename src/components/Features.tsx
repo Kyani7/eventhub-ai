@@ -24,11 +24,11 @@ const PLAN_STEPS = ["Schedule", "Budget", "Volunteers", "Promotion"];
 const CHIPS = ["Smart recommendations", "Live notifications", "AI email writer"];
 
 const cardBase =
-  "rounded-[28px] border p-7 transition-all duration-300 hover:-translate-y-1";
+  "rounded-[32px] border transition-all duration-300 hover:-translate-y-1.5 p-7 sm:p-8";
 
 export default function Features() {
   return (
-    <section id="features" className="relative py-24 sm:py-32">
+    <section id="features" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <motion.div
           variants={reveal}
@@ -38,10 +38,10 @@ export default function Features() {
           custom={0}
           className="max-w-xl"
         >
-          <p className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-3.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.14em] text-accent">
             What it does
-          </p>
-          <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
+          </span>
+          <h2 className="mt-4 font-display text-[34px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[46px]">
             Built for how events
             <br />
             actually run

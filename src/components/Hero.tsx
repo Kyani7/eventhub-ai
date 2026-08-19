@@ -35,15 +35,16 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
         <div className="max-w-2xl">
-          <motion.p
+          <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="show"
             custom={0}
-            className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-ink-soft sm:text-[12px]"
           >
-            Smart event management Platform
-          </motion.p>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-3.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.14em] text-accent">
+              Smart Event Management Platform
+            </span>
+          </motion.div>
 
           <motion.h1
             variants={fadeUp}
@@ -101,15 +102,15 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             custom={4}
-            className="mt-14 grid grid-cols-3 gap-4 border-t border-mist pt-8 sm:gap-8"
+            className="mt-12 grid grid-cols-3 gap-3 rounded-3xl border border-mist/50 bg-paper/80 p-5 shadow-sm backdrop-blur-md sm:gap-6 sm:p-6"
           >
             {STATS.map((stat) => (
-              <div key={stat.label}>
+              <div key={stat.label} className="text-center sm:text-left">
                 <dt className="sr-only">{stat.label}</dt>
-                <dd className="font-display text-[22px] font-bold text-ink sm:text-[28px]">
+                <dd className="font-display text-[22px] font-extrabold text-ink sm:text-[28px]">
                   {stat.value}
                 </dd>
-                <dd className="mt-1 text-[11.5px] leading-snug text-ink-soft sm:text-[12.5px]">
+                <dd className="mt-1 text-[11.5px] font-medium leading-snug text-ink-soft sm:text-[12.5px]">
                   {stat.label}
                 </dd>
               </div>

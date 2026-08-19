@@ -22,13 +22,13 @@ const events = [
 
 export default function ProductPreview() {
   return (
-    <section className="py-24 sm:py-32">
+    <section className="relative py-28 sm:py-36 bg-cloud/20">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <p className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-3.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.14em] text-accent">
             Inside the dashboard
-          </p>
-          <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
+          </span>
+          <h2 className="mt-4 font-display text-[34px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[46px]">
             One place, every event
           </h2>
         </div>

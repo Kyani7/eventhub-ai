@@ -9,14 +9,14 @@ const photos = [
 
 export default function Gallery() {
   return (
-    <section className="border-t border-mist py-24 sm:py-32">
+    <section className="relative py-28 sm:py-36 bg-paper">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div className="max-w-xl">
-            <p className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-3.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.14em] text-accent">
               Moments
-            </p>
-            <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
+            </span>
+            <h2 className="mt-4 font-display text-[34px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[46px]">
               Real events, run on it
             </h2>
           </div>
@@ -30,7 +30,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`group relative overflow-hidden rounded-[24px] ${
+              className={`group relative overflow-hidden rounded-[32px] shadow-sm hover:shadow-xl transition-all duration-500 ${
                 photo.big
                   ? "col-span-2 row-span-2 aspect-square lg:aspect-auto"
                   : "aspect-square"

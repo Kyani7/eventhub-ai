@@ -151,13 +151,13 @@ export default function HowItWorks() {
   const { refs, active, select } = useActiveStep(steps.length);
 
   return (
-    <section id="how-it-works" className="border-t border-mist py-24 sm:py-32">
+    <section id="how-it-works" className="relative py-28 sm:py-36 bg-cloud/30">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="max-w-xl">
-          <p className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-3.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.14em] text-accent">
             How it works
-          </p>
-          <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
+          </span>
+          <h2 className="mt-4 font-display text-[34px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[46px]">
             From idea to certificate,
             <br />
             four steps.
@@ -166,9 +166,9 @@ export default function HowItWorks() {
 
         <div className="mt-16 lg:grid lg:grid-cols-2 lg:gap-16">
           <div className="relative">
-            <div className="absolute left-[27px] top-2 hidden h-[calc(100%-2rem)] w-px bg-mist sm:block" />
+            <div className="absolute left-[27px] top-2 hidden h-[calc(100%-2rem)] w-0.5 bg-mist/60 sm:block" />
 
-            <div className="flex flex-col gap-10 sm:gap-14">
+            <div className="flex flex-col gap-8 sm:gap-10">
               {steps.map((step, i) => {
                 const Icon = step.icon;
                 return (
@@ -187,10 +187,10 @@ export default function HowItWorks() {
                     <button
                       onClick={() => select(i)}
                       aria-label={`Show step ${i + 1}`}
-                      className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border shadow-sm transition-colors duration-300 ${
+                      className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border shadow-md transition-all duration-300 ${
                         active === i
-                          ? "border-ink bg-ink"
-                          : "border-mist bg-paper hover:border-ink/30"
+                          ? "border-ink bg-ink scale-105 shadow-lg"
+                          : "border-mist/60 bg-paper hover:border-ink/30"
                       }`}
                     >
                       <Icon
@@ -202,13 +202,17 @@ export default function HowItWorks() {
 
                     <div
                       onClick={() => select(i)}
-                      className="flex-1 cursor-pointer border-b border-mist pb-10 sm:border-b-0 sm:pb-0"
+                      className={`flex-1 cursor-pointer rounded-3xl border p-6 transition-all duration-300 ${
+                        active === i
+                          ? "border-mist/80 bg-paper shadow-md"
+                          : "border-transparent bg-transparent hover:bg-paper/50"
+                      }`}
                     >
                       <div className="flex items-center gap-3">
                         <span className="font-display text-[13px] font-bold text-ink-soft">
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <span className="rounded-full bg-cloud px-2.5 py-0.5 text-[11px] font-medium text-ink-soft">
+                        <span className="rounded-full bg-cloud px-3 py-1 text-[11px] font-semibold text-ink-soft">
                           {step.tag}
                         </span>
                       </div>

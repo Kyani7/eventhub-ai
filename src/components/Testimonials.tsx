@@ -49,13 +49,13 @@ const track = [...testimonials, ...testimonials];
 
 export default function Testimonials() {
   return (
-    <section className="border-t border-mist py-24 sm:py-32">
+    <section className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="max-w-xl">
-          <p className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-3.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.14em] text-accent">
             Feedback
-          </p>
-          <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
+          </span>
+          <h2 className="mt-4 font-display text-[34px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[46px]">
             Built with organizers,
             <br />
             not just for them
@@ -71,7 +71,7 @@ export default function Testimonials() {
           {track.map((t, i) => (
             <figure
               key={`${t.name}-${i}`}
-              className="flex w-[320px] shrink-0 flex-col rounded-[24px] border border-mist bg-cloud/40 p-7 sm:w-[360px]"
+              className="flex w-[320px] shrink-0 flex-col rounded-[32px] border border-mist/60 bg-paper p-7 shadow-sm transition-all duration-300 hover:shadow-md hover:border-mist sm:w-[360px]"
             >
               <Quote size={22} className="text-accent" strokeWidth={2} />
               <blockquote className="mt-5 flex-1 text-[14.5px] leading-relaxed text-ink">

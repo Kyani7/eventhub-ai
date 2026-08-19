@@ -44,40 +44,29 @@ const faqs: { category: (typeof categories)[number]; q: string; a: string }[] = 
 
 export default function FAQ() {
   const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>("General");
-  const [openItems, setOpenItems] = useState<Set<string>>(new Set([faqs[0].q]));
+  const [openItem, setOpenItem] = useState<string | null>(faqs[0].q);
 
   const visibleFaqs = faqs.filter((f) => f.category === activeCategory);
-  const allOpen = visibleFaqs.every((f) => openItems.has(f.q));
 
-  function toggleItem(q: string) {
-    setOpenItems((prev) => {
-      const next = new Set(prev);
-      next.has(q) ? next.delete(q) : next.add(q);
-      return next;
-    });
+  function handleCategoryChange(cat: (typeof categories)[number]) {
+    setActiveCategory(cat);
+    const firstInCat = faqs.find((f) => f.category === cat);
+    setOpenItem(firstInCat ? firstInCat.q : null);
   }
 
-  function toggleAll() {
-    setOpenItems((prev) => {
-      const next = new Set(prev);
-      if (allOpen) {
-        visibleFaqs.forEach((f) => next.delete(f.q));
-      } else {
-        visibleFaqs.forEach((f) => next.add(f.q));
-      }
-      return next;
-    });
+  function toggleItem(q: string) {
+    setOpenItem((prev) => (prev === q ? null : q));
   }
 
   return (
-    <section id="faq" className="border-t border-mist py-24 sm:py-32">
+    <section id="faq" className="relative py-28 sm:py-36 bg-cloud/30">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
           <div>
-            <p className="font-display text-[11px] font-bold uppercase tracking-[0.16em] text-accent">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-3.5 py-1 text-[11.5px] font-bold uppercase tracking-[0.14em] text-accent">
               FAQ
-            </p>
-            <h2 className="mt-4 font-display text-[32px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[42px]">
+            </span>
+            <h2 className="mt-4 font-display text-[34px] font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[46px]">
               Questions, answered
             </h2>
             <p className="mt-3 max-w-md text-[14.5px] text-ink-soft">
@@ -85,12 +74,14 @@ export default function FAQ() {
             </p>
           </div>
 
-          <button
-            onClick={toggleAll}
-            className="shrink-0 rounded-full border border-mist px-4 py-2 text-[13px] font-medium text-ink-soft transition-colors hover:border-ink/20 hover:bg-cloud hover:text-ink"
-          >
-            {allOpen ? "Collapse all" : "Expand all"}
-          </button>
+          {openItem && (
+            <button
+              onClick={() => setOpenItem(null)}
+              className="shrink-0 rounded-full border border-mist/60 bg-paper px-4 py-2 text-[13px] font-medium text-ink-soft transition-colors hover:border-ink/20 hover:bg-cloud hover:text-ink shadow-xs"
+            >
+              Collapse all
+            </button>
+          )}
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
@@ -100,11 +91,11 @@ export default function FAQ() {
               return (
                 <button
                   key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`shrink-0 rounded-full px-4 py-2.5 text-left text-[13.5px] font-medium transition-colors lg:rounded-2xl ${
+                  onClick={() => handleCategoryChange(cat)}
+                  className={`shrink-0 rounded-full px-4 py-2.5 text-left text-[13.5px] font-medium transition-all duration-200 lg:rounded-2xl ${
                     active
-                      ? "bg-ink text-paper"
-                      : "bg-cloud text-ink-soft hover:bg-mist/70"
+                      ? "bg-ink text-paper shadow-md"
+                      : "bg-paper border border-mist/50 text-ink-soft hover:bg-cloud hover:text-ink"
                   }`}
                 >
                   {cat}
@@ -113,17 +104,28 @@ export default function FAQ() {
             })}
           </div>
 
-          <div className="divide-y divide-mist border-t border-mist lg:border-t-0">
+          <div className="space-y-3.5">
             {visibleFaqs.map((item) => {
-              const isOpen = openItems.has(item.q);
+              const isOpen = openItem === item.q;
               return (
-                <div key={item.q} className="lg:rounded-2xl">
+                <div
+                  key={item.q}
+                  className={`rounded-2xl border bg-paper px-5 py-4 shadow-xs transition-all duration-200 ${
+                    isOpen
+                      ? "border-accent/40 shadow-sm"
+                      : "border-mist/60 hover:border-mist"
+                  }`}
+                >
                   <button
                     onClick={() => toggleItem(item.q)}
                     aria-expanded={isOpen}
-                    className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                    className="flex w-full items-center justify-between gap-4 py-2 text-left"
                   >
-                    <span className="text-[15px] font-semibold text-ink sm:text-[16px]">
+                    <span
+                      className={`text-[15px] font-semibold transition-colors sm:text-[16px] ${
+                        isOpen ? "text-accent" : "text-ink"
+                      }`}
+                    >
                       {item.q}
                     </span>
                     <ChevronDown
@@ -144,7 +146,7 @@ export default function FAQ() {
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <p className="max-w-xl pb-6 text-[14px] leading-relaxed text-ink-soft sm:text-[14.5px]">
+                        <p className="max-w-xl pb-2 pt-2 text-[14px] leading-relaxed text-ink-soft sm:text-[14.5px]">
                           {item.a}
                         </p>
                       </motion.div>

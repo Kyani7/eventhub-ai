@@ -41,7 +41,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-mist bg-cloud/40">
+    <footer className="relative bg-cloud/40 pt-4">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
@@ -58,14 +58,12 @@ export default function Footer() {
               student organizations.
             </p>
             <div className="mt-5 flex items-center gap-3">
-              
-
               <a
                 href="https://github.com/Kyani7"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-mist text-ink-soft transition-colors hover:bg-ink hover:text-paper"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-mist/60 bg-paper text-ink-soft transition-colors hover:bg-ink hover:text-paper shadow-xs"
               >
                 <GithubIcon />
               </a>
@@ -73,16 +71,15 @@ export default function Footer() {
               <a
                 href="https://www.linkedin.com/in/kyandu-rai-67729b363/"
                 aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-mist text-ink-soft transition-colors hover:bg-ink hover:text-paper"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-mist/60 bg-paper text-ink-soft transition-colors hover:bg-ink hover:text-paper shadow-xs"
               >
                 <LinkedinIcon />
               </a>
-              
 
               <a
                 href="https://www.instagram.com/maikki_19/"
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-mist text-ink-soft transition-colors hover:bg-ink hover:text-paper"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-mist/60 bg-paper text-ink-soft transition-colors hover:bg-ink hover:text-paper shadow-xs"
               >
                 <InstagramIcon />
               </a>
@@ -97,7 +94,6 @@ export default function Footer() {
               <ul className="mt-4 space-y-3">
                 {col.links.map((link) => (
                   <li key={link}>
-                    
                     <a
                       href="#"
                       className="text-[13.5px] text-ink-soft transition-colors hover:text-ink"
@@ -111,7 +107,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-mist pt-8 sm:flex-row sm:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-4 pt-8 sm:flex-row sm:items-center">
           <p className="text-[12.5px] text-ink-soft">
             &copy; {new Date().getFullYear()} Gatherly. Final year project
             by Kyani Dan Rai.
@@ -120,12 +116,12 @@ export default function Footer() {
           <a
             href="#top"
             aria-label="Back to top"
-            className="group inline-flex h-[76px] w-[46px] items-center justify-center rounded-full border border-ink/30 bg-transparent text-ink transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:bg-cloud/50 shadow-sm"
+            className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-mist/60 bg-paper text-ink shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:bg-cloud"
           >
             <ArrowUp
-              size={20}
-              strokeWidth={1.75}
-              className="transition-transform duration-300 group-hover:-translate-y-1"
+              size={18}
+              strokeWidth={2}
+              className="transition-transform duration-300 group-hover:-translate-y-0.5"
             />
           </a>
         </div>
